@@ -2,7 +2,9 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 import Role from '../models/Role.js';
+import Menu from '../models/Menu.js';
 
+// User Signup
 export const signup = async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -29,6 +31,7 @@ export const signup = async (req, res) => {
   }
 };
 
+// User Login
 export const login = async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -49,6 +52,22 @@ export const login = async (req, res) => {
     );
 
     res.json({ token });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// Get current user details
+export const getUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).populate('role');
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const menus = await Menu.find({ _id: { $in: user.role.menus } });
+
+    res.json({ ...user.toObject(), menus });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
