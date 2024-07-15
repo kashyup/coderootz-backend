@@ -52,6 +52,13 @@ To get a local copy up and running, follow these simple steps.
 
     Replace `your-database-name` and `your-jwt-secret` with your actual MongoDB database name and a secret key for JWT.
 
+
+Ensure the MongoDB server is running.
+
+Run the seed.js script:  ```sh
+    node seed.js
+    ```
+
 ### Running the Project
 
 1. **Start the server**
