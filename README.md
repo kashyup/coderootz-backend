@@ -55,9 +55,10 @@ To get a local copy up and running, follow these simple steps.
 
 Ensure the MongoDB server is running.
 
-Run the seed.js script:  ```sh
+Run the seed.js script:  
+```sh
     node seed.js
-    ```
+ ```
 
 ### Running the Project
 
