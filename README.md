@@ -59,6 +59,7 @@ Run the seed.js script:
 ```sh
     node seed.js
  ```
+### This will create a superadmin in the database with 'username:superadmin,password:superadminpassword' as you can see in the seed.js file 
 
 ### Running the Project
 
