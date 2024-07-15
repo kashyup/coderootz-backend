@@ -71,15 +71,7 @@ Run the seed.js script:
 
     The server should be up and running at [http://localhost:5000](http://localhost:5000).
 
-### Running in Development Mode
 
-1. **Start the server with nodemon**
-
-    ```sh
-    npm run dev
-    ```
-
-    This will start the server in development mode and automatically restart it on code changes.
 
 
 
